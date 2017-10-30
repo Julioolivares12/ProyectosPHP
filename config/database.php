@@ -2,7 +2,7 @@
    /* clase que envuelve una instancia de la clase PDO
    para el manejo de la base de datos */
     
-   require_once 'mysql_login';
+   require_once 'mysql_login.php';
 
    class Database {
        /* unica instancia de la clase */

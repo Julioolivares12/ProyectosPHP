@@ -5,8 +5,12 @@
  * Date: 29/10/2017
  * Time: 19:05
  */
-require 'config/Database.php';
-class login{
+require '../config/Database.php';
+class Login{
+    public function __construct()
+    {
+        // contructor vacio
+    }
    public static  function login($email,$password){
        //consulta para realizar login
        $consulta = "SELECT * from alumnos where email = ? and pass = ?";

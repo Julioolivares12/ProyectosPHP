@@ -99,7 +99,7 @@
         </div>
 
         <div class="login-form">
-            <form action="controlador/loginController.php" name="loginform">
+            <form action="../controlador/loginController.php" name="loginform">
                 <div class="control-group">
                     <input type="email" class="login-field" name="txtemail" value="" placeholder="email" id="login-name">
                     <label class="login-field-icon fui-user" for="login-name"></label>
@@ -109,10 +109,17 @@
                     <input type="password" class="login-field" value="" name="txtpassword" placeholder="password" id="login-pass">
                     <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
+                <input type="submit" class="btn btn-primary btn-large btn-clock" value="login"/>
+                <?php
+                if (isset($_GET['$errorMensaje']))
+                {
+                    echo "<div class='text-danger'>";
+                    echo $_GET['$errorMensaje'];
+                    echo "</div>";
+                }
+                ?>
             </form>
 
-
-            <a class="btn btn-primary btn-large btn-block" href="#">login</a>
             <a class="login-link" href="#">Lost your password?</a>
         </div>
     </div>

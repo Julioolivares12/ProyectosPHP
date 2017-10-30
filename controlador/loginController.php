@@ -1,5 +1,5 @@
 <?php
-
+require '../modelos/login.php';
 $login= new login();
 $errorMensaje;
    if (!empty($_POST[loginform])){
@@ -14,6 +14,10 @@ $errorMensaje;
            $errorMensaje="error contraseña o email no son validos";
            header("Location:login.php?$errorMensaje");
        }
+   }
+   else{
+       $errorMensaje="campos vacios";
+       header("Location: ../vistas/loginView.php?$errorMensaje");
    }
 
 ?>
