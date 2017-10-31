@@ -15,14 +15,16 @@
             <div class="col-lg-12">
                 <div class="page-header">
                     <h1>Actualizar</h1>
-                    <a href="#">salir</a>
+                    <a href="index.php">salir</a>
                     <?php
                     require("../../modelos/Publicaciones.php");
                     ?>
                     <?php
                     $obtener=new Publicaciones();
-                      if (isset($_GET['editar'])){
-                          $datos=$obtener->ObtenerPorID($_GET['editar']);
+                      if (isset($_GET['editar']))
+                      {
+                          $id=$_GET['editar'];
+                          $datos=$obtener->ObtenerPorID($id);
                       }
                       $combo=$obtener->llenarCombo();
                     ?>
