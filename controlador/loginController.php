@@ -1,5 +1,5 @@
 <?php
-require '../modelos/login.php';
+require './modelos/login.php';
 $login= new login();
 $errorMensaje;
    if (!empty($_POST[loginform])){

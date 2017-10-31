@@ -1,5 +1,5 @@
 <?php
-    require '../config/database.php';
+require ("../../config/database.php");
   class Publicaciones{
 
       public function __construct()
@@ -20,12 +20,35 @@
       }
       public function ObtenerTodas(){
           $db=DATABASE::getInstance()->getDb();
-          $query="select * from pubicaciones";
+          $query="select publicaciones.idPublicacion, publicaciones.titulo,publicaciones.descripcion,publicaciones.cuerpo,tipopublicacion.tipopublicacion from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion ";
           try{
              $comando= $db->prepare($query);
               $comando->execute();
+              return $comando->fetchAll(PDO::FETCH_ASSOC);
           }
           catch (PDOException $exception){
+
+          }
+      }
+      public function ObtenerPorID($id){
+          $db=DATABASE::getInstance()->getDb();
+          $query="select publicaciones.idPublicacion, publicaciones.titulo,publicaciones.descripcion,publicaciones.cuerpo,tipopublicacion.tipopublicacion from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion where publicaciones.idPublicacion='$id' ";
+          try{
+             $cmd=$db->prepare($query);
+             $cmd->execute();
+             return $cmd->fetchAll(PDO::FETCH_ASSOC);
+          }catch (PDOException $exception){
+              return $cmd->errorCode();
+          }
+      }
+      public function llenarCombo(){
+          $db = DATABASE::getInstance()->getDb();
+          $query="select * from tipopublicacion";
+          try{
+              $comando=$db->prepare($query);
+              $comando->execute();
+              return $comando->fetchAll(PDO::FETCH_ASSOC);
+          }catch (PDOException $exception){
 
           }
       }
