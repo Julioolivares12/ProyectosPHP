@@ -32,7 +32,7 @@ require ("../../config/database.php");
       }
       public function ObtenerPorID($id){
           $db=DATABASE::getInstance()->getDb();
-          $query="select publicaciones.idPublicacion, publicaciones.titulo,publicaciones.descripcion,publicaciones.cuerpo,tipopublicacion.tipopublicacion from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion where publicaciones.idPublicacion='$id' ";
+          $query="select * from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion where publicaciones.idPublicacion='$id' ";
           try{
              $cmd=$db->prepare($query);
              $cmd->execute();

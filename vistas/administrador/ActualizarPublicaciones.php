@@ -29,19 +29,41 @@
 
                     <div class="container">
                         <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                            <input type="text" name="txttitulo" value="<?php echo $datos['titulo']?>" class="form-control"/>
-                            <input type="text" name="txtdescripcion" value="<?php echo $datos['descripcion']?>" class="form-control"/>
-                            <textarea class="form-control" cols="50" rows="5" name="txtcuerpo"><?php echo $datos['cuerpo']?></textarea>
-                            <img src="<?php echo $datos['imagenUrl']?>" name="fileImagen" class="img-thumbnail">
-                            <input type="hidden" value="<?php echo $datos['imagenUrl']?>" name="imagenAnterior"/>
-                            <select class="form-control" name="txttipoPublicacion">
-                                <option value="0" selected="selected">seleccione</option>
-                                <?php
-                                foreach ($combo as $item){
-                                    echo "<option value='".$item['id_tipoPublicacion']."'>".$item['tipoPublicacion']."</option>";
-                                }
-                                ?>
-                            </select>
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input type="text" name="txttitulo" value="<?php echo $datos['titulo']?>" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input type="text" name="txtdescripcion" value="<?php echo $datos['descripcion']?>" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <textarea class="form-control" cols="50" rows="10" name="txtcuerpo"><?php echo $datos['cuerpo']?></textarea>
+                                </div>
+                            </div><div class="form-group">
+                                <div class="col-md-4">
+                                    <img src="<?php echo $datos['imagenUrl']?>" name="fileImagen" class="img-thumbnail">
+                                    <input type="hidden" value="<?php echo $datos['imagenUrl']?>" name="imagenAnterior"/>
+                                </div>
+                            </div><div class="form-group">
+                                <div class="col-md-4">
+                                    <select class="form-control" name="txttipoPublicacion">
+                                        <option value="0" selected="selected">seleccione</option>
+                                        <?php
+                                        foreach ($combo as $item){
+                                            echo "<option value='".$item['id_tipoPublicacion']."'>".$item['tipoPublicacion']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div><div class="form-group">
+                                <div class="col-md-4">
+                                    <input type="submit" class="btn btn-success" value="actualizar"/>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
