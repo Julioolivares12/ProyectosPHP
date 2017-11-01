@@ -4,7 +4,7 @@ session_start();
 require ('../config/conexion.php');
 //$login= new login();
 $errorMensaje;
-   if (!isset($_POST['txtemail']) && !isset($_POST['txtpassword'])){
+
        $email=$_POST['txtemail'];
        $pass=$_POST['txtpassword'];
 
@@ -22,9 +22,5 @@ $errorMensaje;
            $_SESSION['imagen']=$fila['imagenUrl'];
            header("Location: ../vistas/alumno/home.php");
        }
-   }
-   else{
-       $errorMensaje="campos vacios";
-       header("Location: ../vistas/loginView.php?$errorMensaje");
-   }
+
 

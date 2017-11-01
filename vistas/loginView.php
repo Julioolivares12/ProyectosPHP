@@ -99,14 +99,14 @@
         </div>
 
         <div class="login-form">
-            <form action="../controlador/loginController.php" name="loginform">
+            <form action="../controlador/loginController.php" method="post" name="loginform">
                 <div class="control-group">
-                    <input type="email" class="login-field" name="txtemail" value="" placeholder="email" id="login-name">
+                    <input type="email" class="login-field" name="txtemail" placeholder="email" id="login-name">
                     <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="control-group">
-                    <input type="password" class="login-field" value="" name="txtpassword" placeholder="password" id="login-pass">
+                    <input type="password" class="login-field" name="txtpassword" placeholder="password" id="login-pass">
                     <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
                 <input type="submit" class="btn btn-primary btn-large btn-clock" value="login"/>

@@ -30,7 +30,7 @@
             </a>
             <div class="dropdown-menu ml-autoS">
                 <a class="dropdown-item" href="#">Perfil</a>
-                <a class="dropdown-item" href="./modelos/logout.php">salir</a>
+                <a class="dropdown-item" href="../../modelos/logout.php">salir</a>
 
             </div>
         </li>
