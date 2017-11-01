@@ -23,7 +23,7 @@
 
 
                     <div class="container">
-                        <form class="form-horizontal" name="crear" action="../../controlador/PublicacionesController.php" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" name="crear" action="../../controlador/crearPublicacion.php" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <div class="col-md-4">
 

@@ -36,6 +36,8 @@ include "../modelos/Publicaciones.php";
      header("Location: ../vistas/administrador/index.php?'$resultado'");
  }
 
+
+
  if(isset($_GET['eliminar'])){
      $eliminar= new Publicaciones();
      $id=$_GET['eliminar'];
