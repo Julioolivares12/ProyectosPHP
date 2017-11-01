@@ -7,15 +7,15 @@ require ("../config/database.php");
 
       }
       public function crearPublicacion($titulo,$descripcion,$cuerpo,$imagenUrl,$id_administrador,$id_tipoPublicacion){
-          $db=DATABASE::getInstance()->getDb();
-          $query="insert into publicaciones ('titulo','descripcion','cuerpo','imagenUrl','id_administrador','id_tipoPublicacion') VALUES ('$titulo','$descripcion','$cuerpo','$imagenUrl','$id_administrador','$id_tipoPublicacion')";
+
+          $query="INSERT INTO publicaciones ('titulo','descripcion','cuerpo','imagenUrl','id_administrador','id_tipoPublicacion') VALUES ('$titulo','$descripcion','$cuerpo','$imagenUrl','$id_administrador','$id_tipoPublicacion')";
           try{
-              $comando=$db->prepare($query);
+              $comando=DATABASE::getInstance()->getDb()->prepare($query);
               $comando->execute();
               return $mensaje="publicacion creada con exito";
           }
           catch (PDOException $exception){
-              return $mensaje="fallo al crear la publicacion";
+              return $mensaje="fallo al crear la publicacion".$exception->getMessage().$exception->errorInfo;
           }
       }
       public function ObtenerTodas(){

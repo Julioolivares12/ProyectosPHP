@@ -44,7 +44,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-4">
-                                        <label class="label-primary">sube una imagen</label>
+                                        <label class="control-label">sube una imagen</label>
                                         <input type="file" id="imagenNueva" class="form-control" name="imagenNueva"/>
                                     </div>
                                 </div>

@@ -15,6 +15,7 @@
            try{
                /**crea una nueva conexion con PDO */
                self::getDb();
+               $this->getDb()->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
            }catch(PDOException $e){
                // para manejar excepciones
            }
