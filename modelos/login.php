@@ -13,7 +13,7 @@ class Login{
     }
    public static  function login($email,$password){
        //consulta para realizar login
-       $consulta = "SELECT * from alumnos where email = ? and pass = ?";
+       $consulta = "SELECT * from alumnos where email ='$email' and pass = '$password'";
        try{
            $comando = DATABASE::getInstance()->getDb()->prepare($consulta);
            // ejecuta la sentencia preparada

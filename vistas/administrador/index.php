@@ -19,31 +19,30 @@
                         <tr>
                             <td>titulo</td>
                             <td>descripcion</td>
-                            <td>cuerpo</td>
+
                             <td>tipo de publicacion</td>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-                        include "../../modelos/Publicaciones.php";
-                        //equire("../../config/conexion.php");
+                       // include "../../modelos/Publicaciones.php";
+                        require("../../config/conexion.php");
                         ?>
                         <?php
-                        $publicaciones= new Publicaciones();
-                        $data = $publicaciones->ObtenerTodas();
-                        //$query="select publicaciones.titulo,publicaciones.descripcion,publicaciones.cuerpo,tipopublicacion.tipopublicacion from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion ";
-                        //$resultado=mysqli_query($con,$query);
-                        //$datos=mysqli_fetch_array($resultado);
-                        echo "<form action='../../PublicacionesControlller.php'>";
-                        foreach ($data as $datos){
-                            echo " <tr>";
-                            echo "<td><input class='form-control' type='text' value='".$datos["titulo"]."'/></td>";
-                            echo "<td><input class='form-control' type='text' value='".$datos["descripcion"]."'/></td>";
-                           // echo "<td><input class='form-control' type='text' value='".$datos["cuerpo"]."'/></td>";
-                            echo "<td><input class='form-control' type='text' value='".$datos["tipopublicacion"]."'/></td>";
+                       // $publicaciones= new Publicaciones();
+                       // $data = $publicaciones->ObtenerTodas();
+                        $query="select publicaciones.idPublicacion, publicaciones.titulo,publicaciones.descripcion,publicaciones.cuerpo,tipopublicacion.tipopublicacion from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion ";                        $resultado=mysqli_query($con,$query);
 
-                            echo "<td>"."<a href='./ActualizarPublicaciones.php?editar=".$datos['idPublicacion']."'>Editar</a>";
-                            echo "<td>"."<a href='../../controlador/PublicacionesController.php?eliminar=".$datos['idPublicacion']."'>Eliminar</a>";
+                        echo "<form action='../../PublicacionesControlller.php'>";
+                        while($data=mysqli_fetch_array($resultado)){
+                            echo " <tr>";
+                            echo "<td><input class='form-control' type='text' value='".$data["titulo"]."'/></td>";
+                            echo "<td><input class='form-control' type='text' value='".$data["descripcion"]."'/></td>";
+                            // echo "<td><input class='form-control' type='text' value='".$datos["cuerpo"]."'/></td>";
+                            echo "<td><input class='form-control' type='text' value='".$data["tipopublicacion"]."'/></td>";
+
+                            echo "<td>"."<a href='./ActualizarPublicaciones.php?editar=".$data['idPublicacion']."'>Editar</a>";
+                            echo "<td>"."<a href='../../controlador/PublicacionesController.php?eliminar=".$data['idPublicacion']."'>Eliminar</a>";
                             echo "</tr>";
                         }
                         echo "</form>";
@@ -52,7 +51,12 @@
 
                         </tbody>
                         <tfoot>
-                        <tr><td>crud para publicaciones</td></tr>
+                        <tr><td><?php
+                                    if(isset($_GET['resultado'])){
+                                        echo "<span class='text-danger'>".$_GET['resultado']."</span>";
+                                    }
+                                    ?>
+                                </td></tr>
                         </tfoot>
                     </table>
                 </div>

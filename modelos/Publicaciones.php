@@ -1,5 +1,5 @@
 <?php
-require ("../../config/database.php");
+require ("../config/database.php");
   class Publicaciones{
 
       public function __construct()
@@ -63,10 +63,12 @@ require ("../../config/database.php");
           try{
               $comando=$db->prepare($query);
               $comando->execute();
-              return $mensaje="publicacion creada con exito";
+              $mensaje="publicacion creada con exito";
+              return $mensaje;
           }
           catch (PDOException $exception){
-              return $mensaje="fallo al crear la publicacion";
+              $mensaje="fallo al actualizar la publicacion".$comando->errorInfo();
+              return $mensaje;
           }
       }
       public function EliminarPublicacion($id){

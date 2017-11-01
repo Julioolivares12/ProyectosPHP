@@ -17,22 +17,29 @@
                     <h1>Actualizar</h1>
                     <a href="index.php">salir</a>
                     <?php
-                    require("../../modelos/Publicaciones.php");
+                    //require("../../modelos/Publicaciones.php");
+                    require ("../../config/conexion.php");
                     ?>
                     <?php
-                    $obtener=new Publicaciones();
+                   // $obtener=new Publicaciones();
                       if (isset($_GET['editar']))
                       {
                           $id=$_GET['editar'];
-                          $datos=$obtener->ObtenerPorID($id);
+                          $query="select * from publicaciones inner join tipopublicacion on tipopublicacion.id_tipoPublicacion=publicaciones.id_tipoPublicacion where publicaciones.idPublicacion='$id' ";
+                          $resul=mysqli_query($con,$query);
+                          $datos=mysqli_fetch_array($resul);
                       }
-                      $combo=$obtener->llenarCombo();
+                      $llenar="select * from tipopublicacion";
+                      $resultado=mysqli_query($con,$llenar);
+
+                      //$combo=mysqli_fetch_array($resultado);
                     ?>
 
                     <div class="container">
-                        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" name="actualizar" action="../../controlador/PublicacionesController.php" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <div class="col-md-4">
+                                    <input type="hidden" name="txtid" value="<?php echo $datos['idPublicacion']?>">
                                     <input type="text" name="txttitulo" value="<?php echo $datos['titulo']?>" class="form-control"/>
                                 </div>
                             </div>
@@ -50,22 +57,43 @@
                                     <img src="<?php echo $datos['imagenUrl']?>" name="fileImagen" class="img-thumbnail">
                                     <input type="hidden" value="<?php echo $datos['imagenUrl']?>" name="imagenAnterior"/>
                                 </div>
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <input type="file" id="imagenNueva" class="form-control" name="imagenNueva"/>
+
+                                    </div>
+                                    <div class="imagePreview col-md-6">
+
+                                    </div>
+
+                                </div>
                             </div><div class="form-group">
                                 <div class="col-md-4">
                                     <select class="form-control" name="txttipoPublicacion">
-                                        <option value="0" selected="selected">seleccione</option>
+                                        <option value="0" name="opcion" selected="selected">seleccione</option>
                                         <?php
-                                        foreach ($combo as $item){
-                                            echo "<option value='".$item['id_tipoPublicacion']."'>".$item['tipoPublicacion']."</option>";
+                                        while ($valores = mysqli_fetch_array($resultado)) {
+
+                                            echo '<option value="'.$valores[id_tipoPublicacion].'">'.$valores['tipoPublicacion'].'</option>';
                                         }
                                         ?>
                                     </select>
                                 </div>
                             </div><div class="form-group">
                                 <div class="col-md-4">
-                                    <input type="submit" class="btn btn-success" value="actualizar"/>
+                                    <input type="submit" name="actualizar" class="btn btn-success" value="actualizar"/>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <?php
+                                     if(isset($_GET['resultado'])){
+                                         echo "<span class='text-danger'>".$_GET['resultado']."</span>";
+                                     }
+                                    ?>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -76,6 +104,23 @@
 
     </section><!--/wrapper -->
 </section>
+<script>
+$(function () {
+    function filePreview(input) {
+        if (input.file && input.files[0]){
+            var reader = new FileReader();
+
+            reader.onload=function (e) {
+                $('.imagePreview').html("<img src='"+e.target.result+" class="img-thumbnail"'>");
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $('#imagenNueva').change(function () {
+        filePreview(this);
+    })
+})();
+</script>
 <?php
    require ("./plantilla/footer.php");
 ?>
