@@ -11,7 +11,7 @@ class Login{
     {
         // contructor vacio
     }
-   public static  function login($email,$password){
+   public function login($email,$password){
        //consulta para realizar login
        $consulta = "SELECT * from alumnos where email ='$email' and pass = '$password'";
        try{
@@ -32,8 +32,8 @@ class Login{
            return false;
        }
    }
-   public static function CrearUsuario($nombre,$apellido,$email,$pass,$imagenUrl,$id_tipo){
-       $comprubaEmail="select * from alumnos where email=? ";
+   public function CrearUsuario($nombre,$apellido,$email,$pass,$imagenUrl,$id_tipo){
+       $comprubaEmail="select * from alumnos where email='$email' ";
        try{
            $com=DATABASE::getInstance()->getDb()->prepare($comprubaEmail);
 
