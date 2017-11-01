@@ -13,7 +13,7 @@
                 </nav>
                 <div class="page-header">
                     <h1>Inicio</h1>
-                    <a href="#">crear</a>
+                    <a href="./crear.php">crear</a>
                     <table class="table table-responsive">
                         <thead>
                         <tr>

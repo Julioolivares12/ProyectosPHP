@@ -20,19 +20,18 @@ include "../modelos/Publicaciones.php";
      $cuerpo=$_POST['txtcuerpo'];
 
      $archivo= $_FILES['fileImagen']['name'];
-     $destino="../../uploads/'$archivo'";
-
-     foreach ($_POST['txttipoPublicacion'] as $publicacion)
-         $opcion=$publicacion;
-
+     $destino="../uploads/imagenes/'$archivo'";
+     $opcion=$_POST['txttipoPublicacion'];
 
      if($archivo!=""){
          move_uploaded_file($_FILES['fileImagen'],$destino);
      }
      else{
          $archivo=$_POST['imagenAnterior'];
-         $destino="../uploads/'$archivo'";
+         $destino="../uploads/imagenes/'$archivo'";
      }
+
+     // ActualizarPublicacion($id,$titulo,$descripcion,$cuerpo,$imagenUrl,$id_tipoPublicacion)
      $resultado=$actualizar->ActualizarPublicacion($id,$titulo,$descripcion,$cuerpo,$archivo,$opcion);
      header("Location: ../vistas/administrador/index.php?'$resultado'");
  }
@@ -41,4 +40,8 @@ include "../modelos/Publicaciones.php";
      $eliminar= new Publicaciones();
      $id=$_GET['eliminar'];
      $resultado = $eliminar->EliminarPublicacion($id);
+     header("Location: ../vistas/administrador/index.php?'$resultado'");
  }
+
+
+
