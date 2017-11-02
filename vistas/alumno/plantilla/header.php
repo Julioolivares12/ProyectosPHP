@@ -25,8 +25,8 @@
 
         <!-- Dropdown -->
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                nombre de usuario
+            <a class="nav-link dropdown-toggle pull-rigth" href="#" id="navbardrop" data-toggle="dropdown">
+                <?php echo $_SESSION['nombre']; ?>
             </a>
             <div class="dropdown-menu ml-autoS">
                 <a class="dropdown-item" href="#">Perfil</a>

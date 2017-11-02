@@ -20,6 +20,7 @@ $errorMensaje;
            $fila=mysqli_fetch_array($resultado);
            $_SESSION['nombre']=$fila['nombre'];
            $_SESSION['imagen']=$fila['imagenUrl'];
+           $_SESSION['tipo']=3;
            header("Location: ../vistas/alumno/home.php");
        }
 

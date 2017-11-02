@@ -4,5 +4,41 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$USER_HOME$/Desktop" />
+          <root url="file://$MODULE_DIR$/../../php" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$USER_HOME$/Desktop" />
+          <root url="file://$MODULE_DIR$/../../php" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$MODULE_DIR$/../../php/pharcommand.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/lo seguire despues/ComplejoBorjaNathan/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$MODULE_DIR$/../../php/pharcommand.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/lo seguire despues/ComplejoBorjaNathan/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -6,8 +6,7 @@
  * Time: 19:38
  */
 
-  require ("../modelos/login.php");
-
+  require ("../config/conexion.php");
 
   if(isset($_POST['nombre'])&& isset($_POST['apellido']) && isset($_POST['email'])&& isset($_POST['password'])){
       $crearCuenta = new Login();
@@ -16,8 +15,6 @@
       $email=$_POST['email'];
       $pass=$_POST['password'];
       $archivo=$_FILES['imagenUsu'];
-
-
       $destino=$_FILES['imagenUsu']['name'];
       $destino="../uploads/imagenes/'$archivo'";
       if ($_FILES['imagenUsu']!=""){
@@ -28,7 +25,7 @@
           header("Location: ../vistas/alumno/home.php");
       }
       else{
-          header("Location: ../vistas/registro=?'error al crear la cuenta'");
+          header("Location: ../vistas/registro.php?'$error'");
       }
   }else{
       $errorMensaje="campos vacios";
