@@ -24,8 +24,13 @@
           move_uploaded_file($_FILES['tmp_name'],$destino);
       }
       $resul=$crearCuenta->CrearUsuario($nombre,$apellido,$email,$pass,$destino);
-
+      if ($resul){
+          header("Location: ../vistas/alumno/home.php");
+      }
+      else{
+          header("Location: ../vistas/registro=?'error al crear la cuenta'");
+      }
   }else{
       $errorMensaje="campos vacios";
-      header("Lcation: ../vistas/registro.php?'$errorMensaje'");
+      header("Location: ../vistas/registro.php?'$errorMensaje'");
   }

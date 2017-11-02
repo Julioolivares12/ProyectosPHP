@@ -45,6 +45,9 @@ class Login{
                $insertar->execute();
                $id=DATABASE::getInstance()->getDb()->lastInsertId();
                $_SESSION['id_alumno']=$id;
+               $_SESSION['urlImagen']=$imagenUrl;
+               $_SESSION['nombre']=$nombre;
+               $_SESSION['tipo']=3;
                return true;
            }
            else{
