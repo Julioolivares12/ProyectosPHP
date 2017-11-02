@@ -24,6 +24,7 @@ class Login{
                $_SESSION['id_alumno']=$data->id_alumno;
                $_SESSION['urlImagen']=$data->urlImagen;
                $_SESSION['nombre']=$data->nombre;
+               $_SESSION['tipo']=$data->id_tipo;
                return true;
            }
 
@@ -32,7 +33,7 @@ class Login{
            return false;
        }
    }
-   public function CrearUsuario($nombre,$apellido,$email,$pass,$imagenUrl,$id_tipo){
+   public function CrearUsuario($nombre,$apellido,$email,$pass,$imagenUrl){
        $comprubaEmail="select * from alumnos where email='$email' ";
        try{
            $com=DATABASE::getInstance()->getDb()->prepare($comprubaEmail);
@@ -40,7 +41,7 @@ class Login{
            $com->execute();
            $count=$com->rowCount();
            if($count<1){
-               $insertar = DATABASE::getInstance()->getDb()->prepare("insert into alumnos(nombre,apellido,email,pass,imagenUrl,id_tipo) VALUES ('$nombre','$apellido','$email','$pass','$imagenUrl','$id_tipo')");
+               $insertar = DATABASE::getInstance()->getDb()->prepare("insert into alumnos(nombre,apellido,email,pass,imagenUrl,id_tipo) VALUES ('$nombre','$apellido','$email','$pass','$imagenUrl')");
                $insertar->execute();
                $id=DATABASE::getInstance()->getDb()->lastInsertId();
                $_SESSION['id_alumno']=$id;
