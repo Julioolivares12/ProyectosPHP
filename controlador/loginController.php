@@ -21,6 +21,7 @@ $errorMensaje;
            $_SESSION['nombre']=$fila['nombre'];
            $_SESSION['imagen']=$fila['imagenUrl'];
            $_SESSION['tipo']=3;
+           $_SESSION['id']=$fila['id_alumno'];
            header("Location: ../vistas/alumno/home.php");
        }
 

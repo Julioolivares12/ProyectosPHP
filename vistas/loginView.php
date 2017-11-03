@@ -120,7 +120,7 @@
                 ?>
             </form>
 
-            <a class="login-link" href="#">Lost your password?</a>
+            <a class="login-link" href="./registro.php">Crear cuenta</a>
         </div>
     </div>
 </div>

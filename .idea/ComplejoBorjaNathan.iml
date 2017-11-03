@@ -21,9 +21,11 @@
         <CLASSES>
           <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
           <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/ComplejoBorjaNathan/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
           <root url="phar://$MODULE_DIR$/../../php/pharcommand.phar/" />
           <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
           <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/lo seguire despues/ComplejoBorjaNathanCode/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
           <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
           <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
           <root url="phar://$USER_HOME$/Desktop/lo seguire despues/ComplejoBorjaNathan/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
@@ -31,9 +33,11 @@
         <SOURCES>
           <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
           <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/ComplejoBorjaNathan/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
           <root url="phar://$MODULE_DIR$/../../php/pharcommand.phar/" />
           <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
           <root url="phar://$USER_HOME$/Desktop/proyecto estadistica/ComplejoBorja/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar/" />
+          <root url="phar://$USER_HOME$/Desktop/lo seguire despues/ComplejoBorjaNathanCode/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
           <root url="phar://$USER_HOME$/Desktop/escritorio/ColegioApp3/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
           <root url="phar://$USER_HOME$/Desktop/escritorio/proyecto/ColegioApp/vendor/phar-io/manifest/tests/_fixture/test.phar/" />
           <root url="phar://$USER_HOME$/Desktop/lo seguire despues/ComplejoBorjaNathan/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />

@@ -99,7 +99,7 @@
         </div>
 
         <div class="login-form">
-            <form action="../controlador/crearCuentaAlumno.php" method="post" name="loginform">
+            <form action="../controlador/crearCuentaAlumno.php" method="post" enctype="multipart/form-data" name="loginform">
                 <div class="control-group">
                     <input type="text" class="login-field" name="nombre" placeholder="nombre" id="login-name">
                     <label class="login-field-icon fui-user" for="login-name"></label>
